@@ -9,6 +9,7 @@ cc process.c -o process
 # Output
 ```
 ./process
-Process Name: 'bash' Process Id: '7612'
-Process Name: './process' Process Id: '7674'
+# pid  process name
+[1924] ./server
+[4561] ./proc
 ```
