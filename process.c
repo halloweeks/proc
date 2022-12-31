@@ -24,6 +24,7 @@ int main(int argc, char **argv) {
 			if ((fd = open(data, O_RDONLY)) != -1) {
             	read(fd, data, 127);
                 printf("[%d] %s\n", id, data);
+                close(fd);
             }
 		}
 	}
