@@ -4,17 +4,15 @@
 #include <fcntl.h>
 #include <dirent.h>
 
-int main(int argc, char **argv) {
+int main() {
 	int id, fd;
 	DIR *dir;
 	char data[128];
 	struct dirent* entry;
 	
-	dir = opendir("/proc");
-	
-	if (dir == NULL) {
+	if ((dir = opendir("/proc")) != NULL) {
 		printf("Failed to open proc\n");
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 	
 	while ((entry = readdir(dir)) != NULL) {
@@ -30,5 +28,5 @@ int main(int argc, char **argv) {
 	}
 	
 	closedir(dir);
-	exit(0);
+	exit(EXIT_SUCCESS);
 }
