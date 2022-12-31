@@ -21,8 +21,7 @@ int main(int argc, char **argv) {
 		sscanf(entry->d_name,"%d",&id);
 		if (id != 0) {
 			sprintf(data, "/proc/%d/cmdline", id);
-			fd = open(data, O_RDONLY);
-            if (fd != -1) {
+			if ((fd = open(data, O_RDONLY)) != -1) {
             	read(fd, data, 127);
                 printf("[%d] %s\n", id, data);
             }
