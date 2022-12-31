@@ -11,5 +11,5 @@ cc process.c -o process
 ./process
 # pid  process name
 [1924] ./server
-[4561] ./proc
+[4561] ./process
 ```
